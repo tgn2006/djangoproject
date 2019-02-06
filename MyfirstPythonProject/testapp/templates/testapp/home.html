@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+{%extends 'testapp/base.html'%}
+{% load static %}
+
+{%block body-block%}
+<h2> Welcom to Rayan cultural center. In this website, you will get some information about the culture and customs of Raya tribe.</h2>
+
+<link rel="stylesheet" type="text/css" href="{% static 'testapp/style.css' %}">
+<a href="/membership" class="btn btn-success">Click here to register as a member </a> <br><br>
+
+<img  src="{% static "testapp/rayaimage.jpg" %}" width="80%" border ="1px solid #ddd" >
+{%endblock%}

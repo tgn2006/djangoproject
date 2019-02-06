@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{% load static %}
+
+{%block body-block%}
+<h2>Members information update form</h2><br>
+<div class = "container">
+<form method="post">
+{%csrf_token%}
+
+    Member_Id: <input type="text" name="member_id" value="{{member.member_id}}"><br><br>
+    First_Name: <input type="text" name="first_name" value="{{member.first_name}}"><br><br>
+    Last_Name: <input type="text" name="last_name" value="{{member.last_name}}"><br><br>
+    Phone_Number: <input type="text" name="phone_number" value="{{member.phone_number}}"><br><br>
+    Email_Address: <input type="text" name="email_address" value="{{member.email_address}}"><br><br>
+    Address: <input type="text" name="address" value="{{member.address}}"><br><br>
+            <input type="submit" name="" value="Update">
+</form>
+
+</div>
+{%endblock%}

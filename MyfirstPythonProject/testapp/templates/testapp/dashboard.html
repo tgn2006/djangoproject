@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{% load static %}
+
+{%block body-block%}
+<h2 align="center"> Members information dashboard</h2>
+<style>
+body{
+background:skyblue;
+}
+table{
+width: 1300px;
+margin:auto;
+text-align:center;
+table-layout:fixed;
+}
+table, tr, th, td{
+padding: 10px;
+color:white;
+border:1px solid #080808;
+border-collapse:collapse;
+font-size:18px;
+font-family:Arial;
+background:linear-gradient(top,#3c3c3c 0%,#222222 100%);
+background: -webkit-linear-gradient(top,#3c3c3c 0%,#222222 100%);
+}
+td:hover{
+background:orange;
+}
+
+</style>
+<body>
+
+<table>
+    <tr>
+        <th>Member_Id</th>
+        <th>First_Name</th>
+        <th>Last_Name</th>
+        <th>Phone_Number</th>
+        <th>Email_Address</th>
+        <th>Address</th>
+    </tr>
+    {% for memb in members%}
+    <tr>
+        <td>{{memb.member_id}}</td>
+        <td>{{memb.first_name}}</td>
+        <td>{{memb.last_name}}</td>
+        <td>{{memb.phone_number}}</td>
+        <td>{{memb.email_address}}</td>
+        <td>{{memb.address}}</td>
+    </tr>
+    {%endfor%}
+    </table>
+
+</body><br><br>
+
+<a href="/membership"  class="btn btn-success ">Click here to register</a>&nbsp&nbsp
+<a href="/delete/{{members.id}}" class="btn btn-danger">Click here to cancel your membership </a>&nbsp&nbsp
+<a href="/update/{{members.id}}" class="btn btn-primary">Click here to update your information</a>
+
+
+{%endblock%}
